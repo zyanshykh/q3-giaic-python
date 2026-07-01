@@ -1,25 +1,23 @@
-import random
+def show_skills(skills):
+    print("Your Skill:")
+    for i, skill in enumerate(skills,start=1):
+        print(f"{i}. {skill}")
 
-print("Welcome to the game,this is a number guessing game! \n You got 5 attempts to guess the number between 50 to 100 ,let's start the game!")
+def main():
+    skills = [
+        "Communication - skills",
+        "Python - Programming",
+        "Web develoment",
+        "E-Commerce",
+        "Graph-Design",
+        "Canva-school",
+        "How to learn e-commerce",
+        "Free code camp",
+        "Google python Class",
+        "how to talk only",
+    ]
 
-number_to_guess = random.randrange(50, 100)
+    show_skills(skills)
 
-chances = 5
-
-guess_counter = 0
-
-while guess_counter < chances:
-    guess_counter += 1
-    my_guess = int(input("Enter your guess number: "))
-
-    if my_guess == number_to_guess:
-        print(f"The number is {number_to_guess} and you found it right!! in the {guess_counter} attempts")
-        break
-    elif guess_counter >= chances and my_guess != number_to_guess:
-        print(f"Oops sorry, the number is {number_to_guess} better luck next time!!")
-    elif my_guess > number_to_guess:
-        print("Your guess is very high,try again!")  
-    elif my_guess < number_to_guess:
-        print("Your guess is very low,try again!")
-            
-        
+if __name__ == "__main__":
+    main()
